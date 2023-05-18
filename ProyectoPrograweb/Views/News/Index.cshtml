@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProyectoPrograweb.Models.dbModels.News>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsCreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdNewsCategoryNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUserNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsCreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNewsCategoryNavigation.IdNewsCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUserNavigation.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdNews">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdNews">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdNews">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
