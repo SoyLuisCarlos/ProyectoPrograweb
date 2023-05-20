@@ -15,3 +15,4 @@ namespace ProyectoPrograweb.Models
         public int IdNewsCategory { get; set; }
     }
 }
+

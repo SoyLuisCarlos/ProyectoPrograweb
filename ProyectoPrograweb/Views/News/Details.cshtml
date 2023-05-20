@@ -4,51 +4,49 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h2>Detalles de la noticia</h2>
 
 <div>
-    <h4>News</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NewsTitle)
+            <p>Título</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsTitle)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NewsDescription)
+            <p>Descripción</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsDescription)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NewsImage)
+            <p>Imagen</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsImage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NewsCreationDate)
+            <p>Fecha de creación</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsCreationDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdNewsCategoryNavigation)
+            <p>Categoría</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdNewsCategoryNavigation.IdNewsCategory)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdUserNavigation)
+            <p>Administrador</p>
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUserNavigation.Id)
+            @Html.DisplayFor(model => model.IdUserNavigation.UserName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdNews">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar</a>
 </div>
