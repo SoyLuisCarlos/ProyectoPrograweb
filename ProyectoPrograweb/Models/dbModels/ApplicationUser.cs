@@ -16,7 +16,7 @@ namespace ProyectoPrograweb.Models.dbModels
 
         [Key]
         public string UserImage { get; set; } = null!;
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime UserCreationDate { get; set; }
         public virtual ICollection<News> News { get; set; }
         public virtual ICollection<News> IdNews { get; set; }

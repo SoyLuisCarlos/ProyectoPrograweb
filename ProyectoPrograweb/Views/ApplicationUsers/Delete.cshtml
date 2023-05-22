@@ -4,105 +4,104 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Eliminación de usuario</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estás seguro que deseas eliminar este usuario?</h3>
 <div>
-    <h4>ApplicationUser</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserImage)
+            <p>Imagen de perfil</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UserImage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserCreationDate)
+            <p>Fecha de creación</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UserCreationDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserName)
+            <p>Nombre</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NormalizedUserName)
+            <p>Nombre normalizado</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NormalizedUserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            <p>Correo</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NormalizedEmail)
+            <p>Correo normalizado</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NormalizedEmail)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmailConfirmed)
+            <p>Confirmación de correo</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EmailConfirmed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PasswordHash)
+            <p>Contraseña</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PasswordHash)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SecurityStamp)
+            <p>Estampilla de seguridad</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SecurityStamp)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ConcurrencyStamp)
+            <p>Concurrency Stamp</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ConcurrencyStamp)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            <p>Número de teléfono</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+            <p>Confirmación de número de teléfono</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumberConfirmed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+            <p>Autenticación en dos pasos</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TwoFactorEnabled)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LockoutEnd)
+            <p>Deshabilitación de la cuenta</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LockoutEnd)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LockoutEnabled)
+            <p>Deshabilitación de la cuenta</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LockoutEnabled)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AccessFailedCount)
+            <p>Acceso fallido a la cuenta</p>
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AccessFailedCount)
@@ -111,7 +110,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
     </form>
 </div>
