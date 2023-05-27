@@ -2,14 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProyectoPrograweb.Models.dbModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
 {
@@ -30,8 +27,9 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public string Username { get; set; }
+        public string Email { get; set; }
 
+        public string Nombre { get; set; }
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -52,6 +50,12 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [Display(Name = "Nombre")]
+            public string Nombre { get; set; }
+            [Required]
+            [Display(Name = "Apellidos")]
+            public string Apellidos { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -66,10 +70,12 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-            Username = userName;
+            Email = userName;
 
             Input = new InputModel
             {
+                Nombre = user.Nombre,
+                Apellidos = user.Apellido,
                 PhoneNumber = phoneNumber
             };
         }
@@ -111,8 +117,19 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-            await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            user.Nombre = Input.Nombre;
+            user.Apellido = Input.Apellidos;
+            
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                await _signInManager.RefreshSignInAsync(user);
+                StatusMessage = "Your profile has been updated";
+            } else
+            {
+                ModelState.AddModelError(string.Empty, "Error inesperado");
+            }
+            
             return RedirectToPage();
         }
     }
