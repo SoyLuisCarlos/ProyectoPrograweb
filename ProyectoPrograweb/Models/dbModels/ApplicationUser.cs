@@ -20,6 +20,8 @@ namespace ProyectoPrograweb.Models.dbModels
         public DateTime UserCreationDate { get; set; }
         public virtual ICollection<News> News { get; set; }
         public virtual ICollection<News> IdNews { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
     }
 }
 
