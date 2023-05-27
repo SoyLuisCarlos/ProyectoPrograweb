@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProyectoPrograweb.styles.css" asp-append-version="true" />
     @RenderSection("Css", required: false)
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -20,19 +23,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a>
+                            <a id="inicio-home" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Lista de usuarios</a>
+                            <a class="nav-link" asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="News" asp-action="Index">Lista de noticias</a>
+                            <a class="nav-link" asp-area="" asp-controller="News" asp-action="Index">Noticias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Matches" asp-action="Index">Lista de partidos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Matches" asp-action="Index">Partidos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="NewsCategories" asp-action="Index">Lista de categorías</a>
+                            <a class="nav-link" asp-area="" asp-controller="NewsCategories" asp-action="Index">Categorías</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

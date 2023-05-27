@@ -1,0 +1,15 @@
+﻿.nav-link {
+    color: #B8BBBF;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+#register, #login{
+    background-color: red;
+}
+
+ul.nav-bar{
+    background-color: red;
+}
