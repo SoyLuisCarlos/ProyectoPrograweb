@@ -26,5 +26,6 @@ body {
 
     .nav-link:hover {
         color: #316ebd;
+        font-weight: bolder;
     }
 

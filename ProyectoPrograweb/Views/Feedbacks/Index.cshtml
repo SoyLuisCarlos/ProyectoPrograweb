@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProyectoPrograweb.Models.dbModels.Feedback>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedbackEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FeedbackEmail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdFeedback">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdFeedback">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdFeedback">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,6 +1,5 @@
 ﻿body {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 100%;
 }
 
 .form-floating, .form-control, .form-label {
@@ -11,53 +10,42 @@
 }
 
 .form-control {
+    width: 100%;
+    max-width: 900px;
     background-color: #4E4F50;
+margin-left: 5px;
 }
 
     .form-control:focus {
         background-color: #4E4F50;
-        box-shadow: 2px #316ebd;;
+        box-shadow: 2px #316ebd;
+        ;
     }
 
+
+    .centralizado{
+        width: 100%;
+        max-width: 1000px;
+    }
 
 .form-floating {
     margin-bottom: 15px;
     font-weight: lighter;
 }
 
-.form-label {
-    color: white;
-}
-
-#titulo-configuracion {
+h3 {
     text-align: left;
     color: #B8BBBF;
     margin-bottom: 15px;
     margin-left: 5px;
+    
 }
 
-#update-profile-button {
-   width: 80%;
-   max-width: 190px;
+hr{
+  color: white; 
 }
 
-#nombres, #apellidos{
-    width: 150px;
-    display: inline-block;
-
-}
-
-#nombres{
-    margin-right: 15px;
-}
-
-#apellidos{
-    margin-left: 0;
-}
-
-Input#Email.form-control, input#Input_Nombre.form-control, input#Input_Apellidos.form-control, input#Input_PhoneNumber.form-control {
+.form-label {
     color: white;
 }
-
-
 
