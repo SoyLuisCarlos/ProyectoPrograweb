@@ -9,6 +9,22 @@
     border-radius: 15px;
 }
 
+div.centro {
+    max-width: 400px;
+    padding: 30px 35px 20px 30px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #242526;
+}
+
+div.centralizado{
+    margin-right: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 5000px;
+}
+
 .form-control {
     width: 100%;
     max-width: 900px;
@@ -16,16 +32,33 @@
 margin-left: 5px;
 }
 
+button#login-submit.w-100.btn.btn-lg.btn-primary, button#registerSubmit.w-100.btn.btn-lg.btn-primary {
+    background-color: #316ebd;
+    font-size: 17px;
+    border: none;
+}
+
+    button#login-submit.w-100.btn.btn-lg.btn-primary:hover, button#registerSubmit.w-100.btn.btn-lg.btn-primary:hover {
+        font-weight: bolder;
+        background-color: #4E4F50;
+    }
+
     .form-control:focus {
         background-color: #4E4F50;
         box-shadow: 2px #316ebd;
-        ;
+    }
+
+    .tienes-cuenta{
+        display: block;
+        margin-top: 15px;
+        margin-left: 40px;
     }
 
 
     .centralizado{
         width: 100%;
         max-width: 1000px;
+        margin-top: 20px;
     }
 
 .form-floating {
@@ -34,18 +67,40 @@ margin-left: 5px;
 }
 
 h3 {
-    text-align: left;
     color: #B8BBBF;
-    margin-bottom: 15px;
-    margin-left: 5px;
-    
+    font-size: 20px;
 }
 
-hr{
-  color: white; 
+.checkbox{
+    margin-left: 60px;
+
+}
+
+#mantener {
+    color: #B8BBBF;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#tienes-cuenta{
+    color: #B8BBBF;
+    font-size: 15px;
+}
+
+#forgot-password{
+    margin-left: 90px;
+    display: block;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+hr {
+    color: white;
 }
 
 .form-label {
     color: white;
 }
+
+
 

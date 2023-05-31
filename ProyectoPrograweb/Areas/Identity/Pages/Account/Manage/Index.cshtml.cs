@@ -124,10 +124,10 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account.Manage
             if (result.Succeeded)
             {
                 await _signInManager.RefreshSignInAsync(user);
-                StatusMessage = "Your profile has been updated";
+                StatusMessage = "Se actulizarón los datos de tu perfil.";
             } else
             {
-                ModelState.AddModelError(string.Empty, "Error inesperado");
+                ModelState.AddModelError(string.Empty, "Error inesperado.");
             }
             
             return RedirectToPage();

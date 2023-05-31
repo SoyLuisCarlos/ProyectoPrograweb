@@ -6,10 +6,20 @@
     margin-right: 20px;
 }
 
-#register, #login{
+li.nav-link {
     background-color: red;
+    border: none;
 }
 
-ul.nav-bar{
-    background-color: red;
+    li.nav-item:hover {
+        background-color: #316ebd;
+    }
+
+@media(max-width: 580px) {
+    ul.navbar-nav {
+        width:100%;
+        max-width: 100px;
+        margin: 0;
+        display: block;
+    }
 }
