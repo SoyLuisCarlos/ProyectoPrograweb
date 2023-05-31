@@ -30,6 +30,14 @@ div.centralizado{
     max-width: 900px;
     background-color: #4E4F50;
 margin-left: 5px;
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #898989 inset !important;
 }
 
 button#login-submit.w-100.btn.btn-lg.btn-primary, button#registerSubmit.w-100.btn.btn-lg.btn-primary {
@@ -40,7 +48,7 @@ button#login-submit.w-100.btn.btn-lg.btn-primary, button#registerSubmit.w-100.bt
 
     button#login-submit.w-100.btn.btn-lg.btn-primary:hover, button#registerSubmit.w-100.btn.btn-lg.btn-primary:hover {
         font-weight: bolder;
-        background-color: #4E4F50;
+        background-color: black;
     }
 
     .form-control:focus {
@@ -53,6 +61,12 @@ button#login-submit.w-100.btn.btn-lg.btn-primary, button#registerSubmit.w-100.bt
         margin-top: 15px;
         margin-left: 40px;
     }
+
+.tienes-cuenta1 {
+    display: block;
+    margin-top: 15px;
+    margin-left: 60px;
+}
 
 
     .centralizado{
@@ -88,7 +102,7 @@ h3 {
 }
 
 #forgot-password{
-    margin-left: 90px;
+    margin-left: 100px;
     display: block;
     font-size: 15px;
     margin-top: 10px;
@@ -101,6 +115,14 @@ hr {
 .form-label {
     color: white;
 }
+
+input#Input_Email.form-control.valid, input#Input_Apellidos.form-control, input#Input_Password.form-control {
+    color: white;
+}
+input#Input_Email.form-control.input-validation-error {
+    color: #FB2F2F;
+}
+
 
 
 

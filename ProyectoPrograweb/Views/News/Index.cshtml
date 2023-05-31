@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<ProyectoPrograweb.Models.dbModels.News>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Noticias";
 }
 
-<h1>Index</h1>
+@section Css{
+    <link href="~/css/CRUDS.css" rel="stylesheet" />
+}
+
+<h3 class="titulos">@ViewData["Title"]</h3>
 
 <p>
-    <a asp-action="Create">Crear una noticia</a>
+    <a class="crear" asp-action="Create">Crear una noticia</a>
 </p>
-<table class="table">
+<table class="table table-dark">
     <thead>
         <tr>
             <th>
@@ -56,9 +60,9 @@
                 @Html.DisplayFor(modelItem => item.IdUserNavigation.UserName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdNews">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdNews">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdNews">Eliminar</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdNews">Editar</a> 
+                    <a class="btn btn-success"  asp-action="Details" asp-route-id="@item.IdNews">Detalles</a> 
+                    <a class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.IdNews">Eliminar</a>
             </td>
         </tr>
 }

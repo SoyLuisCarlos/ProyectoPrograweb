@@ -2,35 +2,49 @@
 @model IEnumerable<ProyectoPrograweb.Models.dbModels.NewsCategory>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categorías";
 }
 
-<h1>Index</h1>
+@section Css{
+    <link href="~/css/CRUDS.css" rel="stylesheet" />
+}
+
+<h3 class="titulos">@ViewData["Title"]</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="crear" asp-action="Create">Crear nueva categoría</a>
 </p>
-<table class="table">
+<table>
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsCategoryDescription)
+        <tr class="descripciones">
+            <th class="categoria">
+                Descripción de categoría
             </th>
-            <th></th>
+            <th class="id-categoria">
+                ID de categoría
+            </th>
+            <th> 
+
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+            <tr class="inyecciones">
+            <td class="categoria">
                 @Html.DisplayFor(modelItem => item.NewsCategoryDescription)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdNewsCategory">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdNewsCategory">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdNewsCategory">Eliminar</a>
+            <td class="id-categoria">
+                    @Html.DisplayFor(modelItem => item.IdNewsCategory)
             </td>
+                <td class="botones">
+                   
+                    <a class="btns"  asp-action="Edit" asp-route-id="@item.IdNewsCategory">Editar</a> 
+                    <a class="btns"  asp-action="Details" asp-route-id="@item.IdNewsCategory">Detalles</a> 
+                    <a class="btns"  asp-action="Delete" asp-route-id="@item.IdNewsCategory">Eliminar</a>
+                   
+                </td>
         </tr>
-}
+        }
     </tbody>
 </table>

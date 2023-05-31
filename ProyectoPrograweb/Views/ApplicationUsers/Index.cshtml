@@ -1,68 +1,66 @@
 ﻿@model IEnumerable<ProyectoPrograweb.Models.dbModels.ApplicationUser>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Usuarios";
 }
 
-<h1>Lista de usuarios</h1>
+@section Css{
+    <link href="~/css/CRUDS.css" rel="stylesheet"/>
+}
 
-<table class="table table-success table-striped">
+<h3 class="titulos">@ViewData["Title"]</h3>
+
+<table>
     <thead>
-        <tr>
-            <th>
-                No. usuario
-            </th>
-            <th>
+        <tr class="descripciones"> 
+            <th class="imagen">
                 Imagen
             </th>
-            <th>
-                Nombre
+            <th class="nombres">
+                Nombre(s)
             </th>
-            <th>
-                Apellido
+            <th class="apellidos">
+                Apellido(s)
             </th>
-            <th>
+            <th class="fecha">
                 Fecha de creación
             </th>
-            <th>
+            <th class="correo">
                 Correo
             </th>
-            <th>
+            <th class="telefono">
                 Teléfono
             </th>
-            <th></th>
+            <th class="botones"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
+            <tr class="inyecciones">
+                <td class="imagen">
                     @Html.DisplayFor(modelItem => item.UserImage)
                 </td>
-                <td>
+                <td class="nombres">
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
-                <td>
+                <td class="apellidos">
                     @Html.DisplayFor(modelItem => item.Apellido)
                 </td>
-                <td>
+                <td class="fecha">
                     @Html.DisplayFor(modelItem => item.UserCreationDate)
                 </td>
-                <td>
+                <td class="correo">
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
-                <td>
+                <td class="telefono">
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                 </td>
-                <td>
+                <td class="botones">
                     
-                        <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Detalles</a>
-                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                        <a class="btns" asp-action="Details" asp-route-id="@item.Id">Detalles</a>
+                        <a class="btns" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btns" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                 
                 </td>
             </tr>

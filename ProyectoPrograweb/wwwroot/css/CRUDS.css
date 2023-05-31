@@ -1,0 +1,124 @@
+﻿body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.titulos {
+    color: #B8BBBF;
+}
+
+.crear {
+    text-decoration: none;
+    background-color: #316ebd;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 20px 0px 20px 0px;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+    .crear:hover {
+        font-weight: bolder;
+        background-color: black;
+        color: white;
+    }
+
+td {
+    color: white;
+    width: 1%;
+    font-weight: lighter;
+    font-size: 15px;
+    text-align: left;
+}
+
+.descripciones {
+    width: 100%;
+    text-align: left;
+}
+
+.inyecciones {
+    padding: 5px;
+    background-color: #4E4F50;
+    border-radius: 15px;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+
+thead{
+    display: block;
+    width: 100%;
+}
+
+table {
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    max-width: 1500px;
+    padding: 20px;
+    background-color: #242526;
+}
+
+tbody{
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+}
+
+th {
+    color: #B8BBBF;
+    width: 1%;
+}
+
+.fecha,.correo,.telefono{
+    max-width: 40px;
+}
+
+.nombres, .apellidos{
+    max-width: 20px;
+}
+
+.imagen {
+    max-width: 20px;
+    text-align: center;
+}
+
+.botones{
+    max-width: 10px;
+    text-align: center;
+}
+
+.btns {
+    display: block;
+    background-color: #316ebd;
+    border-radius: 7px;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    width: 80%;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+    .btns:hover {
+        font-weight: bolder;
+        background-color: black;
+        color: white;
+    }
+
+    .categoria,.id-categoria{
+        width: 1%; 
+    }
+
+    .categoria{
+        text-align: center;
+    }
+
+    .id-categoria{
+        text-align: left;
+    }
