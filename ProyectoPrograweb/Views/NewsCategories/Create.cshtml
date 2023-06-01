@@ -1,24 +1,28 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.NewsCategory
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear categoría";
 }
 
-<h1>Create</h1>
+@section Css{
+    <link href="~/css/CrearCRUDS.css" rel="stylesheet"/>
+}
 
-<h4>NewsCategory</h4>
+
+<h2>@ViewData["Title"]</h2>
+
 <hr />
-<div class="row">
+<div>
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IdNewsCategory" class="control-label"></label>
-                <input asp-for="IdNewsCategory" class="form-control" />
+                <label asp-for="IdNewsCategory" class="control-label">ID</label>
+                <input asp-for="IdNewsCategory" class="form-control"/>
                 <span asp-validation-for="IdNewsCategory" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NewsCategoryDescription" class="control-label"></label>
+                <label asp-for="NewsCategoryDescription" class="control-label">Descricpión</label>
                 <input asp-for="NewsCategoryDescription" class="form-control" />
                 <span asp-validation-for="NewsCategoryDescription" class="text-danger"></span>
             </div>

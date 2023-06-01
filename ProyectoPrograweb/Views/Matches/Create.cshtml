@@ -1,34 +1,37 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.Match
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear partido";
 }
 
-<h1>Create</h1>
+@section Css{
+        <link href="~/css/CrearCRUDS.css" rel="stylesheet"/>
+}
 
-<h4>Match</h4>
+<h2>@ViewData["Title"]</h2>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="MatchTitle" class="control-label"></label>
+                <label asp-for="MatchTitle" class="control-label">Título</label>
                 <input asp-for="MatchTitle" class="form-control" />
                 <span asp-validation-for="MatchTitle" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MatchImage" class="control-label"></label>
+                <label asp-for="MatchImage" class="control-label">Imagen</label>
                 <input asp-for="MatchImage" class="form-control" />
                 <span asp-validation-for="MatchImage" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MatchDescription" class="control-label"></label>
+                <label asp-for="MatchDescription" class="control-label">Descripción</label>
                 <input asp-for="MatchDescription" class="form-control" />
                 <span asp-validation-for="MatchDescription" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdNewsCategory" class="control-label"></label>
+                <label asp-for="IdNewsCategory" class="control-label">Selecciona categoría</label>
                 <select asp-for="IdNewsCategory" class ="form-control" asp-items="ViewBag.IdNewsCategory"></select>
             </div>
             <div class="form-group">

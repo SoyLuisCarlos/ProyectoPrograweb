@@ -1,0 +1,87 @@
+﻿body {
+    font-family: 'Noto Sans', sans-serif;
+    color: #B8BBBF;
+}
+
+#esconder{
+    display: none;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 900px;
+    background-color: #4E4F50;
+    margin-left: 5px;
+}
+
+.form-control, .form-label {
+    width: 100%;
+    max-width: 318px;
+    border: none;
+    border-radius: 15px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #898989 inset !important;
+}
+
+
+.form-control:focus {
+    background-color: #4E4F50;
+    box-shadow: 2px #316ebd;
+}
+
+div.form-group{
+    margin-bottom: 10px;
+}
+
+input#Nombre.form-control, input#Apellido.form-control, input#Email.form-control, input#PhoneNumber.form-control, input#PasswordHash.form-control, input#UserImage.form-control {
+    color: white;
+    height: 50px;
+}
+
+.centro {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    background-color: #242526;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+label.control-label{
+    margin-bottom: 2px;
+}
+
+#btn{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+input.btn.btn-primary {
+    margin-left: 35px;
+    background-color: #316ebd;
+    border: none;
+    font-size: 15px;
+}
+
+    input.btn.btn-primary:hover{
+        background-color: black;
+        font-weight: bolder;
+        color: white;
+    }
+
+#a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #B8BBBF;
+}
+
+    #a:hover {
+        color: #316ebd;
+    }

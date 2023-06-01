@@ -38,12 +38,12 @@
             <div class="tienes-cuenta1">
                 <p id="tienes-cuenta">
                     ¿No tienes cuenta?
-                    <a asp-page="Identity/Account/Login">Registrarme</a>
+                    <a asp-area="Identity" asp-page="/Account/Register">Registrarme</a>
                 </p>
             </div>
                 <div>
                     <p>
-                        <a id="forgot-password" asp-page="Identity/Account/Manage/ForgotPassword">Olvidé la contraseña</a>
+                    <a id="forgot-password" asp-area="Identity" asp-page="/Account/ForgotPassword">Olvidé la contraseña</a>
                     </p>
                 </div>
             </form>

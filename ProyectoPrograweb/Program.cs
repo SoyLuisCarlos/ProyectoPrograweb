@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrograweb.Models.dbModels;
 
@@ -19,8 +22,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ProyectoContext>()
-    .AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<ProyectoContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

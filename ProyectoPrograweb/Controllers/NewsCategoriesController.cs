@@ -24,9 +24,9 @@ namespace ProyectoPrograweb.Controllers
         // GET: NewsCategories
         public async Task<IActionResult> Index()
         {
-              return _context.NewsCategories != null ? 
-                          View(await _context.NewsCategories.ToListAsync()) :
-                          Problem("Entity set 'ProyectoContext.NewsCategories'  is null.");
+            return _context.NewsCategories != null ?
+                        View(await _context.NewsCategories.ToListAsync()) :
+                        Problem("Entity set 'ProyectoContext.NewsCategories'  is null.");
         }
 
         // GET: NewsCategories/Details/5
@@ -152,14 +152,14 @@ namespace ProyectoPrograweb.Controllers
             {
                 _context.NewsCategories.Remove(newsCategory);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool NewsCategoryExists(int id)
         {
-          return (_context.NewsCategories?.Any(e => e.IdNewsCategory == id)).GetValueOrDefault();
+            return (_context.NewsCategories?.Any(e => e.IdNewsCategory == id)).GetValueOrDefault();
         }
     }
 }

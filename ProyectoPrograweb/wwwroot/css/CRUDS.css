@@ -74,8 +74,12 @@ th {
     width: 1%;
 }
 
-.fecha,.correo,.telefono{
+.fecha,.correo,.telefono,.titulo,.categoria-noticia,.descripcion{
     max-width: 40px;
+}
+
+.titulo{
+    text-align: center;
 }
 
 .nombres, .apellidos{
@@ -121,4 +125,10 @@ th {
 
     .id-categoria{
         text-align: left;
+   
+      }
+
+    #categoria{ 
+        text-align: center;
+
     }

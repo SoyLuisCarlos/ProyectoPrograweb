@@ -4,6 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
+@section Css{
+    <link href="~/css/CrearCRUDS.css" rel="stylesheet"/>
+}
+
 <h2>Creando noticia</h2>
 
 <hr />
@@ -25,11 +29,6 @@
                 <label asp-for="NewsImage" class="control-label">Link de la imagen</label>
                 <input asp-for="NewsImage" class="form-control" />
                 <span asp-validation-for="NewsImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NewsCreationDate" class="control-label"></label>
-                <input asp-for="NewsCreationDate" class="form-control" />
-                <span asp-validation-for="NewsCreationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdUser" class="control-label"></label>

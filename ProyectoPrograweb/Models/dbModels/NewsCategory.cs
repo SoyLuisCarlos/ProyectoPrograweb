@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProyectoPrograweb.Models.dbModels
@@ -18,10 +19,15 @@ namespace ProyectoPrograweb.Models.dbModels
         [Key]
         public int IdNewsCategory { get; set; }
         public string NewsCategoryDescription { get; set; } = null!;
+        
+        [NotMapped]
+        public SelectList? SelectList { get; set; }
 
         [InverseProperty("IdNewsCategoryNavigation")]
         public virtual ICollection<Match> Matches { get; set; }
         [InverseProperty("IdNewsCategoryNavigation")]
         public virtual ICollection<News> News { get; set; }
+
+       
     }
 }

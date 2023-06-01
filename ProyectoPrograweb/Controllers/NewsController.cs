@@ -105,7 +105,7 @@ namespace ProyectoPrograweb.Controllers
         // POST: News/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdNews,NewsTitle,NewsDescription,NewsImage,NewsCreationDate,IdUser,IdNewsCategory")] News news)
         {
@@ -173,14 +173,14 @@ namespace ProyectoPrograweb.Controllers
             {
                 _context.News.Remove(news);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool NewsExists(int id)
         {
-          return (_context.News?.Any(e => e.IdNews == id)).GetValueOrDefault();
+            return (_context.News?.Any(e => e.IdNews == id)).GetValueOrDefault();
         }
     }
 }

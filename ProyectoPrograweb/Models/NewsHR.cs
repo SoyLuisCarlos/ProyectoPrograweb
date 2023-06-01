@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using MessagePack;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace ProyectoPrograweb.Models
 {
@@ -13,6 +17,7 @@ namespace ProyectoPrograweb.Models
         public DateTime NewsCreationDate { get; set; }
         public int IdUser { get; set; }
         public int IdNewsCategory { get; set; }
+        
     }
 }
 

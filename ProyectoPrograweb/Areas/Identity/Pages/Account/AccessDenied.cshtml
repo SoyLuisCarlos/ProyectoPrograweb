@@ -1,10 +1,24 @@
 ﻿@page
 @model AccessDeniedModel
 @{
-    ViewData["Title"] = "Access denied";
+    ViewData["Title"] = "Acceso denegado";
+}
+
+@section Css{
+    <link href="~/css/AccessDenied.css" rel="stylesheet"/>
 }
 
 <header>
-    <h1 class="text-danger">@ViewData["Title"]</h1>
-    <p class="text-danger">You do not have access to this resource.</p>
+    <div class="central">
+    <div class="centro">
+        <div class="dentro">
+                <h5 class="text-danger">@ViewData["Title"] <i class="fa-solid fa-lock"></i></h5>
+     <hr />
+    <p>No tienes permiso de ingresar a esta vista. Necesitas ser Administrador.</p>
+    <div class="boton">
+                <a id="boton" asp-controller="Home" asp-action="Index">Volver a Inicio</a>
+            </div>
+          </div>
+    </div>
+    </div>
 </header>

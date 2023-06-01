@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProyectoPrograweb.Models.dbModels
@@ -19,7 +20,7 @@ namespace ProyectoPrograweb.Models.dbModels
         public string NewsTitle { get; set; } = null!;
         public string NewsDescription { get; set; } = null!;
         public string NewsImage { get; set; } = null!;
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime NewsCreationDate { get; set; }
         public int IdUser { get; set; }
         public int IdNewsCategory { get; set; }
@@ -34,5 +35,7 @@ namespace ProyectoPrograweb.Models.dbModels
         [ForeignKey("IdNews")]
         [InverseProperty("IdNews")]
         public virtual ICollection<ApplicationUser> IdUsers { get; set; }
+
+
     }
 }

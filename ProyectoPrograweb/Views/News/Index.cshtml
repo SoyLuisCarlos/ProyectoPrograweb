@@ -13,56 +13,56 @@
 <p>
     <a class="crear" asp-action="Create">Crear una noticia</a>
 </p>
-<table class="table table-dark">
+<table>
     <thead>
-        <tr>
-            <th>
+        <tr class="descripciones">
+            <th class="titulo">
                 <p>Título</p>
             </th>
-            <th>
+            <th class="descripcion">
                 <p>Descripción</p>
                 
             </th>
-            <th>
+            <th class="imagen">
                 <p>Imagen</p>
             </th>
-            <th>
+            <th class="fecha">
                 <p>Fecha de creación</p>
             </th>
-            <th>
+            <th class="categoria-noticia">
                 <p>Categoría</p>
             </th>
-            <th>
+            <th class="correo">
                 <p>Administrador</p>
             </th>
-            <th></th>
+            <th class="botones"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="inyecciones">
+            <td class="titulo">
                 @Html.DisplayFor(modelItem => item.NewsTitle)
             </td>
-            <td>
+            <td class="descripcion">
                 @Html.DisplayFor(modelItem => item.NewsDescription)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsImage)
+            <td class="imagen">
+                <img class="img-fluid w-50" src="@Html.DisplayFor(modelItem => item.NewsImage)" />
             </td>
-            <td>
+            <td class="fecha">
                 @Html.DisplayFor(modelItem => item.NewsCreationDate)
             </td>
-            <td>
+            <td class="categoria-noticia">
                 @Html.DisplayFor(modelItem => item.IdNewsCategoryNavigation.NewsCategoryDescription)
             </td>
-            <td>
+            <td class="correo">
                 @Html.DisplayFor(modelItem => item.IdUserNavigation.UserName)
             </td>
-            <td>
-                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.IdNews">Editar</a> 
-                    <a class="btn btn-success"  asp-action="Details" asp-route-id="@item.IdNews">Detalles</a> 
-                    <a class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.IdNews">Eliminar</a>
+            <td class="botones">
+                <a class="btns" asp-action="Edit" asp-route-id="@item.IdNews">Editar</a> 
+                    <a class="btns"  asp-action="Details" asp-route-id="@item.IdNews">Detalles</a> 
+                    <a class="btns"  asp-action="Delete" asp-route-id="@item.IdNews">Eliminar</a>
             </td>
         </tr>
 }
