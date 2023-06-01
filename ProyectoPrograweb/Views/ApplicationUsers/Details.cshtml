@@ -4,11 +4,21 @@
     ViewData["Title"] = "Detalles de usuario ";
 }
 
-<h1>Detalles de usuario</h1>
+@section Css{
+    <link href="~/css/DetallesCRUD.css" rel="stylesheet"/>
+}
+
+<h3>Detalles de usuario</h3>
 
 <div>
     <hr />
     <dl class="row">
+        <dt class="col-sm-2">
+         <p>Número de usuario</p>
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dt>
         <dt class = "col-sm-2">
             <p>Imagen de perfil</p>
         </dt>

@@ -1,0 +1,10 @@
+﻿body {
+    color: #B8BBBF;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a.btn.btn-success {
+    background-color: red;
+    border: none;
+    font-size: 15px;
+}
