@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using ProyectoPrograweb.Models.dbModels;
 
 namespace ProyectoPrograweb.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MatchesController : Controller
     {
         private readonly ProyectoContext _context;
@@ -99,7 +101,7 @@ namespace ProyectoPrograweb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMatch,MatchTitle,MatchImage,MatchDescription,IdNewsCategory")] Match match)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMatch,MatchTitle,MatchImage,MatchDescription,IdNewsCategory")] MatchHR match)
         {
             if (id != match.IdMatch)
             {

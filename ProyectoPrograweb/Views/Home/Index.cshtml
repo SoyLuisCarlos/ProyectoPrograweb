@@ -1,11 +1,29 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model HomeViewModel
+
 
 @section Css{
-    <link href="~/css/site.css" rel="stylesheet"/>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
 }
 
-<div class="text-center">
-    <p>Aquí irían las noticias :(</p>
+@{
+    ViewData["Title"] = "Feed de noticias";
+}
+
+
+<div class="container">
+    @foreach(News noticia in Model.Noticias){
+    <div class="centro">
+        <div class="tarjeta">
+                <h5 class="titulo">@noticia.NewsTitle</h5>@noticia.NewsCreationDate
+            <div>
+                    <img class="imagen" src="@noticia.NewsImage" />
+             </div>
+             <div class="descripcion">
+                    @noticia.NewsDescription
+                 </div>
+        </div>
+    </div>
+}
+
 </div>

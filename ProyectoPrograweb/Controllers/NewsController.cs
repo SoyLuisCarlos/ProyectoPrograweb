@@ -69,9 +69,9 @@ namespace ProyectoPrograweb.Controllers
                 News noticia = new News
                 {
                     NewsTitle = news.NewsTitle,
-                    NewsDescription = news.NewsDescription,
+                    NewsDescription = news.NewsDescription, 
                     NewsImage = news.NewsImage,
-                    NewsCreationDate = news.NewsCreationDate,
+                    NewsCreationDate = DateTime.Now,
                     IdUser = news.IdUser,
                     IdNewsCategory = news.IdNewsCategory
                 };
@@ -105,9 +105,9 @@ namespace ProyectoPrograweb.Controllers
         // POST: News/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ActionName("Edit")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdNews,NewsTitle,NewsDescription,NewsImage,NewsCreationDate,IdUser,IdNewsCategory")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("IdNews,NewsTitle,NewsDescription,NewsImage,NewsCreationDate,IdUser,IdNewsCategory")] NewsHR news)
         {
             if (id != news.IdNews)
             {
@@ -118,7 +118,17 @@ namespace ProyectoPrograweb.Controllers
             {
                 try
                 {
-                    _context.Update(news);
+                    News noticia = new News
+                    {
+                        IdNews = news.IdNews,
+                        NewsTitle = news.NewsTitle,
+                        NewsDescription = news.NewsDescription,
+                        NewsImage = news.NewsImage,
+                        NewsCreationDate = news.NewsCreationDate,
+                        IdUser = news.IdUser,
+                        IdNewsCategory = news.IdNewsCategory
+                    };
+                    _context.Update(noticia);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

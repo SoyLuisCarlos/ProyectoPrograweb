@@ -22,7 +22,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ProyectoContext>();
+    .AddEntityFrameworkStores<ProyectoContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

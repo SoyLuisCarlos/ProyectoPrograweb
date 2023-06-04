@@ -1,0 +1,40 @@
+﻿body {
+    font-family: 'Noto Sans', sans-serif;
+    color: #B8BBBF;
+}
+
+.tarjeta{
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagen {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.centro {
+    background-color: #242526;
+    max-width: 500px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.titulo, .descripcion {
+    text-align: left;
+    margin-left: 15px;
+}
+
+.titulo{
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.descripcion{ margin-top: 10px; }
