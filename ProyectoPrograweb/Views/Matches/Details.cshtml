@@ -1,42 +1,49 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.Match
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de partido";
 }
 
-<h1>Details</h1>
+@section Css{
+    <link href="~/css/AccessDenied.css" rel="stylesheet" />
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
+}
 
 <div>
-    <h4>Match</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MatchTitle)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MatchTitle)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MatchImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MatchImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MatchDescription)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MatchDescription)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdNewsCategoryNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdNewsCategoryNavigation.IdNewsCategory)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdMatch">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <form asp-action="Detalis">
+        <div class="central">
+            <div class="centro-eliminar">
+                <div class="dentro">
+                    <h5>@ViewData["Title"]</h5>
+                    <hr />
+                    <div class="centro">
+                        <div class="tarjeta">
+                            <h5 class="titulo">@Html.DisplayFor(model => model.MatchTitle)</h5>
+                            <div>
+                                <img class="imagen" src="@Html.DisplayFor(model => model.MatchImage)" />
+                            </div>
+                            <div class="descripcion">
+                                @Html.DisplayFor(model => model.MatchDescription)
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <p>Título: @Html.DisplayFor(model => model.MatchTitle)</p>
+                    <p>Descripción: @Html.DisplayFor(model => model.MatchDescription)</p>
+                    <p>Link de la imagen: <a class="link-imagen" target="_blank" href="@Html.DisplayFor(model => model.MatchImage)"> Imagen de noticia #@Html.DisplayFor(model => model.IdMatch) </a></p>
+                    <div class="form-group justify-content-between d-sm-inline-flex" id="btn">
+                        <div id="btn">
+                            <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                        </div>
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" asp-for="IdMatch" />
+
+    </form>
 </div>

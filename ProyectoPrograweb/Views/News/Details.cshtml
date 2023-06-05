@@ -1,52 +1,49 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.News
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles de noticia";
 }
 
-<h2>Detalles de la noticia</h2>
+@section Css{
+    <link href="~/css/AccessDenied.css" rel="stylesheet" />
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
+}
 
 <div>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            <p>Título</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NewsTitle)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Descripción</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NewsDescription)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Imagen</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NewsImage)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Fecha de creación</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NewsCreationDate)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Categoría</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdNewsCategoryNavigation.IdNewsCategory)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Administrador</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUserNavigation.UserName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index">Regresar</a>
+    <form asp-action="Detalis">
+        <div class="central">
+            <div class="centro-eliminar">
+                <div class="dentro">
+                    <h5>@ViewData["Title"]</h5>
+                    <hr />
+                    <div class="centro">
+                        <div class="tarjeta">
+                            <h5 class="titulo">@Html.DisplayFor(model => model.NewsTitle)</h5>
+                            <div>
+                                <img class="imagen" src="@Html.DisplayFor(model => model.NewsImage)" />
+                            </div>
+                            <div class="descripcion">
+                                @Html.DisplayFor(model => model.NewsDescription)
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <p>Título: @Html.DisplayFor(model => model.NewsTitle)</p>
+                    <p>Descripción: @Html.DisplayFor(model => model.NewsDescription)</p>
+                    <p>Link de la imagen: <a class="link-imagen" target="_blank" href="@Html.DisplayFor(model => model.NewsImage)"> Imagen de noticia #@Html.DisplayFor(model => model.IdNews) </a></p>
+                    <div class="form-group justify-content-between d-sm-inline-flex" id="btn">
+                        <div id="btn">
+                            <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" asp-for="IdNews" />
+
+    </form>
 </div>

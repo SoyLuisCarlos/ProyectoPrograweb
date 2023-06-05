@@ -5,58 +5,45 @@
 }
 
 @section Css{
-    <link href="~/css/DetallesCRUD.css" rel="stylesheet"/>
+    <link href="~/css/AccessDenied.css" rel="stylesheet" />
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
 }
 
-<h3>Detalles de usuario</h3>
+<div>
+    <form asp-action="Details">
+        <div class="central">
+            <div class="centro-eliminar">
+                <div class="dentro">
+                    <h5>@ViewData["Title"]</h5>
+                    <hr />
+                    <div class="centro">
+                        <div class="tarjeta">
+                            <img class="imagen-usuario" src="@Html.DisplayFor(model => model.UserImage)" />
+                            <h5 class="titulo-usuario">@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)</h5>
+                            <div>
+                                <p class="fecha-usuario">Fecha de creación: @Html.DisplayFor(model => model.UserCreationDate)</p>
 
-<div>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-         <p>Número de usuario</p>
-        </dt>
-        <dt class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dt>
-        <dt class = "col-sm-2">
-            <p>Imagen de perfil</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserImage)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Fecha de creación</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserCreationDate)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Nombre(s)</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Apellido(s)</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Correo</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Teléfono</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index" class="btn btn-success">Volver a lista de usuarios</a>
+                            </div>
+                            <div class="correo-usuario">
+                                Correo: @Html.DisplayFor(model => model.Email)
+                            </div>
+                            <div class="telefono-usuario">
+                                Teléfono: @Html.DisplayFor(model => model.PhoneNumber)
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="form-group justify-content-between d-sm-inline-flex" id="btn">
+                        <div id="btn">
+                            <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" asp-for="Id" />
+
+    </form>
 </div>

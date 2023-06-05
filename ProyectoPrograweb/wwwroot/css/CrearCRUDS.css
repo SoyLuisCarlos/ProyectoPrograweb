@@ -31,14 +31,47 @@ input:-webkit-autofill:active {
     box-shadow: 2px #316ebd;
 }
 
-input#NewsDescription.form-control, input#NewsTitle.form-control, input#NewsImage.form-control, select#IdNewsCategory.form-control {
+input#NewsDescription.form-control, input#NewsTitle.form-control, input#NewsImage.form-control, select#IdNewsCategory.form-control, select#IdUser.form-control{
     color: white;
 }
 
-div.form-group{
+input#MatchImage.form-control, input#MatchTitle.form-control, input#MatchDescription.form-control, input#IdNewsCategory.form-control, input#NewsCategoryDescription.form-control {
+    color: white;
+}
+
+
+div.form-group {
     margin-bottom: 20px;
 }
 
 label.control-label{
     margin-bottom: 2px;
 }
+
+
+#btn {
+    display: inline-block;
+}
+
+input.btn.btn-primary {
+    margin-left: 160px;
+    background-color: #316ebd;
+    border: none;
+    font-size: 15px;
+}
+
+    input.btn.btn-primary:hover {
+        background-color: black;
+        font-weight: bolder;
+        color: white;
+    }
+
+#a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #B8BBBF;
+}
+
+    #a:hover {
+        color: #316ebd;
+    }

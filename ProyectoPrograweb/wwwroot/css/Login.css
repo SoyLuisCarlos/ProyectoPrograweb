@@ -80,7 +80,7 @@ button#login-submit.w-100.btn.btn-lg.btn-primary, button#registerSubmit.w-100.bt
     font-weight: lighter;
 }
 
-h3 {
+h4 {
     color: #B8BBBF;
     font-size: 20px;
 }
@@ -128,7 +128,6 @@ input#Input_UserImage.form-control, input#Input_Nombre.form-control, input#Input
 input#Input_Email.form-control.input-validation-error {
     color: #FB2F2F;
 }
-
 
 
 

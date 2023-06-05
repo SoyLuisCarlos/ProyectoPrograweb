@@ -6,15 +6,16 @@
 
 @section Css{
     <link href="~/css/CrearCRUDS.css" rel="stylesheet"/>
+    <link href="~/css/Login.css" rel="stylesheet" />
 }
 
 
-<h2>@ViewData["Title"]</h2>
 
-<hr />
-<div>
-    <div class="col-md-4">
+<div class="centralizado">
+    <div class="centro">
+        <h3>@ViewData["Title"]</h3>
         <form asp-action="Create">
+            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdNewsCategory" class="control-label">ID</label>
@@ -26,16 +27,17 @@
                 <input asp-for="NewsCategoryDescription" class="form-control" />
                 <span asp-validation-for="NewsCategoryDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Crear categoría" class="btn btn-primary" />
+            <div class="form-group" id="btn">
+                <div id="btn">
+                    <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                </div>
+                <input type="submit" value="Crear" class="btn btn-primary" />
+
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -5,15 +5,17 @@
 }
 
 @section Css{
-        <link href="~/css/CrearCRUDS.css" rel="stylesheet"/>
+    <link href="~/css/CrearCRUDS.css" rel="stylesheet" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+
 }
 
-<h2>@ViewData["Title"]</h2>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="centralizado">
+    <div class="centro">
+        <h3>@ViewData["Title"]</h3>
         <form asp-action="Create">
+            <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="MatchTitle" class="control-label">Título</label>
@@ -34,17 +36,16 @@
                 <label asp-for="IdNewsCategory" class="control-label">Selecciona categoría</label>
                 <select asp-for="IdNewsCategory" class ="form-control" asp-items="ViewBag.IdNewsCategory"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group" id="btn">
+                <div id="btn">
+                    <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                </div>
+                <input type="submit" value="Crear" class="btn btn-primary" />
+
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

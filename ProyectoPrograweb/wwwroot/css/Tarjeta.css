@@ -64,3 +64,12 @@
     text-align: left;
     margin-top: -5px; 
 }
+
+.telefono-usuario {
+    text-align: left;
+    margin-top: 10px;
+}
+
+a.link-imagen {
+    color: #316ebd;
+}
