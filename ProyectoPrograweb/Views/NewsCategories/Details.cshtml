@@ -21,13 +21,13 @@
                         <div class="tarjeta">
                             <h5 class="titulo"></h5>
                             <div class="descripcion">
-                                
+                                <p>Nombre: @Html.DisplayFor(model => model.NewsCategoryDescription)</p>
+                                <p>ID: @Html.DisplayFor(model => model.IdNewsCategory)</p>
                             </div>
                         </div>
                     </div>
                     <hr />
-                    <p>Título: @Html.DisplayFor(model => model.NewsCategoryDescription)</p>
-                    <p>Descripción: @Html.DisplayFor(model => model.IdNewsCategory)</p>
+                    
                     <div class="form-group justify-content-between d-sm-inline-flex" id="btn">
                         <div id="btn">
                             <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
