@@ -1,116 +1,50 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.ApplicationUser
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar usuario";
 }
 
-<h1>Eliminación de usuario</h1>
+@section Css{
+    <link href="~/css/AccessDenied.css" rel="stylesheet"/>
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
+}
 
-<h3>¿Estás seguro que deseas eliminar este usuario?</h3>
+
 <div>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            <p>Imagen de perfil</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserImage)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Fecha de creación</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserCreationDate)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Nombre</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Nombre normalizado</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NormalizedUserName)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Correo</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Correo normalizado</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NormalizedEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Confirmación de correo</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmailConfirmed)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Contraseña</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Estampilla de seguridad</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SecurityStamp)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Concurrency Stamp</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ConcurrencyStamp)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Número de teléfono</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Confirmación de número de teléfono</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Autenticación en dos pasos</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TwoFactorEnabled)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Deshabilitación de la cuenta</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LockoutEnd)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Deshabilitación de la cuenta</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LockoutEnabled)
-        </dd>
-        <dt class = "col-sm-2">
-            <p>Acceso fallido a la cuenta</p>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AccessFailedCount)
-        </dd>
-    </dl>
-    
     <form asp-action="Delete">
+    <div class="central">
+        <div class="centro-eliminar">
+            <div class="dentro">
+                <h5 class="text-danger">@ViewData["Title"] <i class="fa-solid fa-trash"></i></h5>
+                <hr />
+                <div class="centro">
+                    <div class="tarjeta">
+                        <img class="imagen-usuario" src="@Html.DisplayFor(model => model.UserImage)" />
+                        <h5 class="titulo-usuario">@Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido)</h5>
+                        <div>
+                            <p class="fecha-usuario">Fecha de creación: @Html.DisplayFor(model => model.UserCreationDate)</p>
+                            
+                        </div>
+                        <div class="correo-usuario">
+                            Correo: @Html.DisplayFor(model => model.Email)
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <p class="seguro">¿Estás seguro que deseas eliminar este usuario?</p>
+                <div class="form-group justify-content-between d-sm-inline-flex" id="btn">
+                    <div id="btn">
+                        <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                    </div>
+                    <input type="submit" value="Eliminar" class="btn btn-danger" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index">Regresar</a>
+       
     </form>
 </div>

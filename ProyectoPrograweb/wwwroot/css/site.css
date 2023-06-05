@@ -12,7 +12,6 @@ span.navbar-toggler-icon {
         font-weight: bolder;
     }
 
-
 html {
   position: relative;
   min-height: 100%;
@@ -43,4 +42,30 @@ footer {
     background-color: #242526;
     color: #B8BBBF;
 }
-  
+
+
+ul.dropdown-menu.show {
+    background-color: #242526;
+    border-radius: 10px;
+}
+
+a.dropdown-item {
+    color: #B8BBBF;
+}
+
+    a.dropdown-item:hover {
+        background-color: #242526;
+        color: #316ebd;
+        font-weight: bolder;
+    }
+
+button#dropdownMenuButton1.btn.btn-primary.dropdown-toggle {
+    background-color: #316ebd;
+    border: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+    button#dropdownMenuButton1.btn.btn-primary.dropdown-toggle:hover, button#dropdownMenuButton1.btn.btn-primary.dropdown-toggle:focus {
+        background-color: black;
+    }

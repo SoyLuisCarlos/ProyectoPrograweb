@@ -34,11 +34,26 @@ input:-webkit-autofill:active {
     box-shadow: 2px #316ebd;
 }
 
+
 div.form-group{
     margin-bottom: 10px;
 }
 
-input#Nombre.form-control, input#Apellido.form-control, input#Email.form-control, input#PhoneNumber.form-control, input#PasswordHash.form-control, input#UserImage.form-control {
+#todo{
+    margin-bottom: 15px;
+}
+
+input#Nombre.form-control, input#Apellido.form-control, input#Email.form-control, input#PhoneNumber.form-control, input#PasswordHash.form-control, input#UserImage.form-control, #todo {
+    color: white;
+    height: 50px;
+}
+
+input#NewsTitle.form-control, input#NewsDescription.form-control, input#NewsImage.form-control, select#IdNewsCategory.form-control{
+    color: white;
+    height: 50px;
+}
+
+input#MatchTitle.form-control, input#MatchDescription.form-control, input#MatchImage.form-control, input#NewsCategoryDescription.form-control{
     color: white;
     height: 50px;
 }

@@ -2,8 +2,8 @@
 
 namespace ProyectoPrograweb.ViewModel
 {
-    public class NewsViewModel
+    public class MatchesViewModel
     {
-        public List<News> Noticias { get; set; } = null!;
+        public List <Match> Partidos { get; set; } = null!;
     }
 }

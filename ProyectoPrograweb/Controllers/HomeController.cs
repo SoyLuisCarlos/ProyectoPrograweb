@@ -19,19 +19,26 @@ namespace ProyectoPrograweb.Controllers
             _context = context;
         }
 
+        [Authorize]
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult NewsFeed()
         {
-            HomeViewModel hvm = new HomeViewModel
+            NewsViewModel nvm = new ()
             {
                 Noticias = _context.News.ToList()
             };
-            return View(hvm);
+            return View(nvm);
         }
 
-        public IActionResult Privacy()
+        [Authorize]
+        [HttpGet]
+        public IActionResult MatchesFeed()
         {
-            return View();
+            MatchesViewModel mvm = new()
+            {
+                Partidos = _context.Matches.ToList()
+            };
+            return View(mvm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

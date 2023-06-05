@@ -1,0 +1,28 @@
+﻿@model MatchesViewModel
+
+@section Css{
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/Tarjeta.css" rel="stylesheet" />
+}
+
+@{
+    ViewData["Title"] = "Feed de partidos";
+}
+
+<div class="container">
+    @foreach (Match partido in Model.Partidos)
+    {
+        <div class="centro">
+            <div class="tarjeta">
+                <h5 class="titulo">@partido.MatchTitle</h5>
+                <div>
+                    <img class="imagen" src="@partido.MatchImage" />
+                </div>
+                <div class="descripcion">
+                    @partido.MatchDescription
+                </div>
+            </div>
+        </div>
+      
+    }
+</div>

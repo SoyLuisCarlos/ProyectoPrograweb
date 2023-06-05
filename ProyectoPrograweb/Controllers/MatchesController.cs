@@ -110,9 +110,17 @@ namespace ProyectoPrograweb.Controllers
 
             if (ModelState.IsValid)
             {
+                Match partido = new Match
+                {
+                    IdMatch = match.IdMatch,
+                    MatchTitle = match.MatchTitle,
+                    MatchDescription = match.MatchDescription,
+                    MatchImage = match.MatchImage,
+                    IdNewsCategory = match.IdNewsCategory
+                };
                 try
                 {
-                    _context.Update(match);
+                    _context.Update(partido);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

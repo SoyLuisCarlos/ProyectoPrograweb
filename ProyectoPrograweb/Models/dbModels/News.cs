@@ -16,7 +16,6 @@ namespace ProyectoPrograweb.Models.dbModels
 
         [Key]
         public int IdNews { get; set; }
-        [StringLength(50)]
         public string NewsTitle { get; set; } = null!;
         public string NewsDescription { get; set; } = null!;
         public string NewsImage { get; set; } = null!;

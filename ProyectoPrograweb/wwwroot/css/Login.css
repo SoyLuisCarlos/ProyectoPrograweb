@@ -116,9 +116,15 @@ hr {
     color: white;
 }
 
-input#Input_Email.form-control.valid, input#Input_Apellidos.form-control, input#Input_Password.form-control {
+input#Input_Email.form-control.valid, input#Input_Apellido.form-control, input#Input_Password.form-control  {
     color: white;
 }
+
+input#Input_UserImage.form-control, input#Input_Nombre.form-control, input#Input_ConfirmPassword.form-control {
+    color: white;
+}
+
+
 input#Input_Email.form-control.input-validation-error {
     color: #FB2F2F;
 }

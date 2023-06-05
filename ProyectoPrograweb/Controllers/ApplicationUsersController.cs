@@ -148,6 +148,7 @@ namespace ProyectoPrograweb.Controllers
                 return Problem("Entity set 'ProyectoContext.Users'  is null.");
             }
             var applicationUser = await _context.Users.FindAsync(id);
+
             if (applicationUser != null)
             {
                 _context.Users.Remove(applicationUser);

@@ -10,9 +10,11 @@
 
 <h3 class="titulos">@ViewData["Title"]</h3>
 
+<div class="crear-btn">
 <p>
     <a class="crear" asp-action="Create">Crear nuevo partido</a>
 </p>
+</div>
 <table>
     <thead>
         <tr class="descripciones">
@@ -48,9 +50,9 @@
             </td>
                 <td class="botones">
                 
-                    <a class="btns"  asp-action="Edit" asp-route-id="@item.IdMatch">Edit</a> 
-                    <a class="btns"  asp-action="Details" asp-route-id="@item.IdMatch">Details</a> 
-                    <a class="btns"  asp-action="Delete" asp-route-id="@item.IdMatch">Delete</a>
+                    <a class="btns"  asp-action="Edit" asp-route-id="@item.IdMatch">Editar</a> 
+                    <a class="btns"  asp-action="Details" asp-route-id="@item.IdMatch">Detalles</a> 
+                    <a class="btns"  asp-action="Delete" asp-route-id="@item.IdMatch">Eliminar</a>
                     
             </td>
         </tr>

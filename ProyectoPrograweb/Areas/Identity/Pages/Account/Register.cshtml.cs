@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -84,12 +85,16 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Apellido")]
             public string Apellido { get; set; }
+
+            [Required]
+            [Display(Name = "Imagen")]
+            public string UserImage { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "La contraseña debe tener al menos {2} caracteres y un máximo de {1}.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -100,7 +105,7 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account
             /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "Las contraseñas no coinciden.")]
             public string ConfirmPassword { get; set; }
 
         }
@@ -120,6 +125,7 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+                user.UserImage = (string)Input.UserImage;
                 user.UserCreationDate = DateTime.Now;
                 user.Nombre = (string)Input.Nombre;
                 user.Apellido = (string)Input.Apellido;
@@ -132,7 +138,8 @@ namespace ProyectoPrograweb.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var userId = await _userManager.GetUserIdAsync(user);                    
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",

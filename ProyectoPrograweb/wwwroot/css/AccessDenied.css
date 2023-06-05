@@ -3,13 +3,14 @@
     color:#B8BBBF; 
 }
 
-.centro {
+.centro-eliminar {
     display: block;
     width: 100%;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     padding: 50px;
+    margin-top: -40px;
 }
 
 .dentro {
@@ -39,4 +40,51 @@
 #boton:hover{
     background-color: black;
     font-weight: bolder;
+}
+
+#btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+div#btn.form-group{
+    width: 100%;
+}
+
+#a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #B8BBBF;
+}
+
+    #a:hover {
+        color: #316ebd;
+    }
+
+    .seguro{
+        text-align: center;
+    }
+
+    div#btn.align-content-end{
+        width: 100%;
+        text-align: right;
+    }
+
+a#confirm-link {
+    text-decoration: none;
+    background-color: #316ebd;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: lighter;
+}
+
+a#confirm-link:hover{
+    background-color: black;
+    font-weight: bolder;
+}
+
+.correo-mostrado{
+    text-align: center;
+    color: white;
 }

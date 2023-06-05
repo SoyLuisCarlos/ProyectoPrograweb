@@ -38,3 +38,29 @@
 }
 
 .descripcion{ margin-top: 10px; }
+
+.imagen-usuario{
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+}
+
+.titulo-usuario {
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: -30px;
+}
+
+.fecha-usuario{
+    text-align: left;
+    margin-top: 25px;
+}
+
+.correo-usuario{
+    text-align: left;
+    margin-top: -5px; 
+}

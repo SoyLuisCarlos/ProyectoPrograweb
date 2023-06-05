@@ -1,32 +1,36 @@
 ﻿@model ProyectoPrograweb.Models.dbModels.NewsCategory
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar categoría";
 }
 
-<h1>Edit</h1>
+@section Css{
+    <link href="~/css/Editar.css" rel="stylesheet"/>
+}
 
-<h4>NewsCategory</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="central">
+<div class="centro">
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <div>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdNewsCategory" />
             <div class="form-group">
-                <label asp-for="NewsCategoryDescription" class="control-label"></label>
+                <label asp-for="NewsCategoryDescription" class="control-label">Descripción</label>
                 <input asp-for="NewsCategoryDescription" class="form-control" />
                 <span asp-validation-for="NewsCategoryDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group" id="btn">
+                <div id="btn">
+                    <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                </div>
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

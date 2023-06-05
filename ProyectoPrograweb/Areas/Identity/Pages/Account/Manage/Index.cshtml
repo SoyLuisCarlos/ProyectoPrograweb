@@ -1,41 +1,52 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Perfil";
+    ViewData["Title"] = "Editar perfil";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 @section Css{
-    <link href="~/css/Login.css" rel="stylesheet"/>
+    <link href="~/css/Editar.css" rel="stylesheet"/>
 }
 
-<h5 id="titulo-configuracion">Configuración de Cuenta</h5>
+
 <partial name="_StatusMessage" for="StatusMessage" />
-<div class="todo-el-form">
-    <div class="contenedor-foto">
+<div class="centro">
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <div>
         <form id="idForm" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating">
-                <input asp-for="Email" class="form-control"/>
+                <input id="todo" asp-for="Input.UserImage" class="form-control" />
+                <label asp-for="Input.UserImage" class="form-label">Imagen</label>
+                <span asp-validation-for="Input.UserImage"></span>
+            </div>
+            <div class="form-floating">
+                <input id="todo" asp-for="Email" class="form-control"/>
                 <label asp-for="Email" class="form-label">Correo</label>
             </div>
-            <div class="form-floating" id="nombres">
-                <input asp-for="Input.Nombre" class="form-control" />
+            <div class="form-floating">
+                <input id="todo" asp-for="Input.Nombre" class="form-control" />
                 <label asp-for="Input.Nombre" class="form-label">Nombre(s)</label>
                 <span asp-validation-for="Input.Nombre"></span>
             </div>
-            <div class="form-floating" id="apellidos">
-                <input asp-for="Input.Apellidos" class="form-control" />
+            <div class="form-floating">
+                <input id="todo" asp-for="Input.Apellidos" class="form-control" />
                 <label asp-for="Input.Apellidos" class="form-label">Apellido(s)</label>
                 <span asp-validation-for="Input.Apellidos"></span>
             </div>
             <div class="form-floating">
-                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <input id="todo" asp-for="Input.PhoneNumber" class="form-control" />
                 <label asp-for="Input.PhoneNumber" class="form-label">Teléfono</label>
                 <span asp-validation-for="Input.PhoneNumber"></span>
             </div>
-       
-            <button id="update-profile-button" type="submit" class="btn btn-secondary">Guardar cambios</button>
+            <div class="form-group" id="btn">
+                <div id="btn">
+                    <a id="a" asp-controller="Home" asp-action="NewsFeed"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+                </div>
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
 
+            </div>
         </form>
 </div>
 </div>

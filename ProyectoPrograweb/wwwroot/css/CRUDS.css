@@ -4,6 +4,19 @@
 
 .titulos {
     color: #B8BBBF;
+    text-align: right;
+}
+
+div.crear-btn{
+   width: 100%;
+   max-width: 400px;
+   margin-left: auto;
+   margin-right: 0;
+}
+
+a.crear{
+   margin-right: 0;
+   margin-left: auto;
 }
 
 .crear {
@@ -89,7 +102,6 @@ th {
 .imagen {
     max-width: 20px;
     text-align: center;
-    border-radius: 10px;
 }
 
 .botones{
@@ -133,3 +145,4 @@ th {
         text-align: center;
 
     }
+

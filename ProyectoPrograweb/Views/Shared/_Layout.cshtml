@@ -23,24 +23,30 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a id="inicio-home" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a>
+                            <a id="inicio-home" class="nav-link" asp-area="" asp-controller="Home" asp-action="NewsFeed">Noticias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Usuarios</a>
+                            <a id="inicio-home" class="nav-link" asp-area="" asp-controller="Home" asp-action="MatchesFeed">Partidos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="News" asp-action="Index">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Matches" asp-action="Index">Partidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="NewsCategories" asp-action="Index">Categorías</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Feedbacks" asp-action="Index">Feedback</a>
-                        </li>
-                    </ul>
+                        
+                                          </ul>
+                  
+                        @if (User.IsInRole("Admin"))
+                        {
+
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Administrador
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li> <a class="dropdown-item" asp-area="" asp-controller="ApplicationUsers" asp-action="Index">Usuarios</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="News" asp-action="Index">Noticias</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Matches" asp-action="Index">Partidos</a></li>
+                                    <li> <a class="dropdown-item" asp-area="" asp-controller="NewsCategories" asp-action="Index">Categorías</a></li>
+                                </ul>
+                            </div>
+                        }
+                  
                     <partial name="_LoginPartial" />
                 </div>
             </div>

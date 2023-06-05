@@ -4,11 +4,17 @@
     ViewData["Title"] = "Editar noticia";
 }
 
-<h1>@ViewData["Title"]</h1>
+@section Css{
+    <link href="~/css/Editar.css" rel="stylesheet"/>
+}
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+
+
+
+<div class="centro">
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <div>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdNews" />
@@ -27,12 +33,12 @@
                 <input asp-for="NewsImage" class="form-control"/>
                 <span asp-validation-for="NewsImage" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="esconder">
                 <label asp-for="NewsCreationDate" class="control-label">Fecha de creación</label>
                 <input asp-for="NewsCreationDate" class="form-control" />
                 <span asp-validation-for="NewsCreationDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="esconder">
                 <label asp-for="IdUser" class="control-label">Usuario</label>
                 <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
                 <span asp-validation-for="IdUser" class="text-danger"></span>
@@ -42,15 +48,15 @@
                 <select asp-for="IdNewsCategory" class="form-control" asp-items="ViewBag.IdNewsCategory"></select>
                 <span asp-validation-for="IdNewsCategory" class="text-danger"></span>
             </div>
-            <div class="form-group">
+              <div class="form-group" id="btn">
+                <div id="btn">
+    <a id="a" asp-action="Index"><i class="fa-solid fa-caret-left"></i> Regresar</a>
+</div>
                 <input type="submit" value="Guardar cambios" class="btn btn-primary" />
+
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Regresar</a>
 </div>
 
 @section Scripts {
